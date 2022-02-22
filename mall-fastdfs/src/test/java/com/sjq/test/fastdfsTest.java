@@ -30,10 +30,10 @@ public class fastdfsTest {
      */
     @Test
     public void uploda() throws FileNotFoundException {
-
-        File f = new File("d://mv.mp4");
+//        http://192.168.72.138:8888/group1/M00/00/00/wKhIimHuA-eAYZyCADBBktvjuYA208.png
+        File f = new File("C:\\Users\\Kemp\\Pictures\\Saved Pictures\\s.jpg");
         FileInputStream fi = new FileInputStream(f);
-        StorePath storePath = fastFileStorageClient.uploadFile(fi, f.length(), "mp4", null);
+        StorePath storePath = fastFileStorageClient.uploadFile(fi, f.length(), "jpg", null);
         System.out.println(storePath.getGroup());
         System.out.println(storePath.getPath());
         System.out.println(storePath.getFullPath());

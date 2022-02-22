@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>common-utils</module>
+        <module>service-base</module>
     </modules>
 
     <dependencies>
@@ -38,12 +39,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <scope>provided </scope>
-        </dependency>
-
-        <!-- redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 

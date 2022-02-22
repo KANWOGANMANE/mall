@@ -1,0 +1,88 @@
+2022-02-22 12:41:24.587 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'redisUtil', defined in class path resource [com/sjq/eduteacher/config/redis/RedisConfig.class], could not be registered. A bean with that name has already been defined in file [D:\IDEA\ideaproject\mall\service\service-edu\target\classes\com\sjq\eduteacher\config\redis\RedisUtil.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2022-02-22 12:42:20.962 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'redisUtil', defined in class path resource [com/sjq/eduteacher/config/redis/RedisConfig.class], could not be registered. A bean with that name has already been defined in file [D:\IDEA\ideaproject\mall\service\service-edu\target\classes\com\sjq\eduteacher\config\redis\RedisUtil.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2022-02-22 12:43:23.588 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'redisUtil', defined in class path resource [com/sjq/eduteacher/config/redis/RedisConfig.class], could not be registered. A bean with that name has already been defined in file [D:\IDEA\ideaproject\mall\service\service-edu\target\classes\com\sjq\eduteacher\config\redis\RedisUtil.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2022-02-22 12:43:53.352 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field redisTemplate in com.sjq.eduteacher.config.redis.RedisUtil required a bean of type 'com.sjq.eduteacher.config.redis.RedisTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.sjq.eduteacher.config.redis.RedisTemplate' in your configuration.
+
+2022-02-22 12:44:47.297 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'redisUtil', defined in class path resource [com/sjq/eduteacher/config/redis/RedisConfig.class], could not be registered. A bean with that name has already been defined in file [D:\IDEA\ideaproject\mall\service\service-edu\target\classes\com\sjq\eduteacher\config\redis\RedisUtil.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2022-02-22 12:46:28.217 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'redisUtil', defined in class path resource [com/sjq/eduteacher/config/redis/RedisConfig.class], could not be registered. A bean with that name has already been defined in file [D:\IDEA\ideaproject\mall\service\service-edu\target\classes\com\sjq\eduteacher\config\redis\RedisUtil.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
