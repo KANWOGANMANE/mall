@@ -1,0 +1,156 @@
+2022-02-24 19:24:25.602 [main] INFO  com.sjq.edu.EduTeacherApplication - Starting EduTeacherApplication using Java 1.8.0_261 on LAPTOP-4COONQEM with PID 3276 (D:\IDEA\ideaproject\mall\service\service-edu\target\classes started by Kemp in D:\IDEA\ideaproject\mall)
+2022-02-24 19:24:25.608 [main] INFO  com.sjq.edu.EduTeacherApplication - The following profiles are active: dev
+2022-02-24 19:24:26.773 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 19:24:26.776 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 19:24:26.814 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2022-02-24 19:24:27.353 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2022-02-24 19:24:27.362 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2022-02-24 19:24:27.362 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-02-24 19:24:27.362 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-02-24 19:24:27.448 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-02-24 19:24:27.448 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1772 ms
+2022-02-24 19:24:27.671 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisTemplate实例化成功！
+2022-02-24 19:24:27.790 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisUtil注入成功！
+2022-02-24 19:24:28.019 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-02-24 19:24:28.110 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 19:24:28.170 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 19:24:28.220 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 19:24:28.296 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-24 19:24:29.319 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2022-02-24 19:24:29.332 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2022-02-24 19:24:29.333 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 19:24:29.345 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 19:24:29.373 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 19:24:29.424 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_1
+2022-02-24 19:24:29.426 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_2
+2022-02-24 19:24:29.484 [main] INFO  com.sjq.edu.EduTeacherApplication - Started EduTeacherApplication in 4.543 seconds (JVM running for 5.441)
+2022-02-24 19:24:29.829 [RMI TCP Connection(5)-192.168.72.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 19:24:29.829 [RMI TCP Connection(5)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 19:24:29.831 [RMI TCP Connection(5)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-02-24 19:46:22.444 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-24 19:46:22.448 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 19:46:26.991 [main] INFO  com.sjq.edu.EduTeacherApplication - Starting EduTeacherApplication using Java 1.8.0_261 on LAPTOP-4COONQEM with PID 9812 (D:\IDEA\ideaproject\mall\service\service-edu\target\classes started by Kemp in D:\IDEA\ideaproject\mall)
+2022-02-24 19:46:26.995 [main] INFO  com.sjq.edu.EduTeacherApplication - The following profiles are active: dev
+2022-02-24 19:46:27.911 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 19:46:27.913 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 19:46:27.937 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-02-24 19:46:28.360 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2022-02-24 19:46:28.368 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2022-02-24 19:46:28.369 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-02-24 19:46:28.369 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-02-24 19:46:28.450 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-02-24 19:46:28.450 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1408 ms
+2022-02-24 19:46:28.643 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisTemplate实例化成功！
+2022-02-24 19:46:28.773 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisUtil注入成功！
+2022-02-24 19:46:28.848 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-02-24 19:46:28.936 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 19:46:30.123 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 19:46:30.199 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 19:46:30.317 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-24 19:46:30.758 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2022-02-24 19:46:30.779 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2022-02-24 19:46:30.780 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 19:46:30.799 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 19:46:30.834 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 19:46:30.974 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_1
+2022-02-24 19:46:30.976 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_2
+2022-02-24 19:46:30.999 [main] INFO  com.sjq.edu.EduTeacherApplication - Started EduTeacherApplication in 4.654 seconds (JVM running for 5.64)
+2022-02-24 19:46:32.037 [RMI TCP Connection(7)-192.168.72.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 19:46:32.038 [RMI TCP Connection(7)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 19:46:32.040 [RMI TCP Connection(7)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-02-24 19:51:43.775 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-24 19:51:43.781 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 19:51:49.688 [main] INFO  com.sjq.edu.EduTeacherApplication - Starting EduTeacherApplication using Java 1.8.0_261 on LAPTOP-4COONQEM with PID 292 (D:\IDEA\ideaproject\mall\service\service-edu\target\classes started by Kemp in D:\IDEA\ideaproject\mall)
+2022-02-24 19:51:49.691 [main] INFO  com.sjq.edu.EduTeacherApplication - The following profiles are active: dev
+2022-02-24 19:51:50.935 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 19:51:50.937 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 19:51:50.969 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2022-02-24 19:51:51.442 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2022-02-24 19:51:51.449 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2022-02-24 19:51:51.450 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-02-24 19:51:51.451 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-02-24 19:51:51.561 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-02-24 19:51:51.562 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1828 ms
+2022-02-24 19:51:51.788 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisTemplate实例化成功！
+2022-02-24 19:51:51.925 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisUtil注入成功！
+2022-02-24 19:51:52.021 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-02-24 19:51:52.155 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 19:51:53.207 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 19:51:53.267 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 19:51:53.341 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-24 19:51:53.671 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2022-02-24 19:51:53.684 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2022-02-24 19:51:53.686 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 19:51:53.698 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 19:51:53.726 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 19:51:53.841 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_1
+2022-02-24 19:51:53.843 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_2
+2022-02-24 19:51:53.864 [main] INFO  com.sjq.edu.EduTeacherApplication - Started EduTeacherApplication in 4.938 seconds (JVM running for 5.982)
+2022-02-24 19:51:54.351 [RMI TCP Connection(2)-192.168.72.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 19:51:54.352 [RMI TCP Connection(2)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 19:51:54.353 [RMI TCP Connection(2)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-02-24 20:23:29.681 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-24 20:23:29.687 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 20:23:42.530 [main] INFO  com.sjq.edu.EduTeacherApplication - Starting EduTeacherApplication using Java 1.8.0_261 on LAPTOP-4COONQEM with PID 18752 (D:\IDEA\ideaproject\mall\service\service-edu\target\classes started by Kemp in D:\IDEA\ideaproject\mall)
+2022-02-24 20:23:42.535 [main] INFO  com.sjq.edu.EduTeacherApplication - The following profiles are active: dev
+2022-02-24 20:23:43.450 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:23:43.452 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:23:43.477 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-02-24 20:23:43.881 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2022-02-24 20:23:43.889 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2022-02-24 20:23:43.889 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-02-24 20:23:43.890 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-02-24 20:23:44.000 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-02-24 20:23:44.001 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1418 ms
+2022-02-24 20:23:44.232 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisTemplate实例化成功！
+2022-02-24 20:23:44.410 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisUtil注入成功！
+2022-02-24 20:23:44.586 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-02-24 20:23:44.724 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 20:23:45.736 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 20:23:45.791 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 20:23:45.877 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-24 20:23:46.239 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2022-02-24 20:23:46.254 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2022-02-24 20:23:46.254 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 20:23:46.269 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 20:23:46.300 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 20:23:46.422 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_1
+2022-02-24 20:23:46.424 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_2
+2022-02-24 20:23:46.445 [main] INFO  com.sjq.edu.EduTeacherApplication - Started EduTeacherApplication in 4.643 seconds (JVM running for 5.724)
+2022-02-24 20:23:47.133 [RMI TCP Connection(6)-192.168.72.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 20:23:47.133 [RMI TCP Connection(6)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 20:23:47.134 [RMI TCP Connection(6)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-02-24 20:27:16.167 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-24 20:27:16.171 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 20:27:33.430 [main] INFO  com.sjq.edu.EduTeacherApplication - Starting EduTeacherApplication using Java 1.8.0_261 on LAPTOP-4COONQEM with PID 7064 (D:\IDEA\ideaproject\mall\service\service-edu\target\classes started by Kemp in D:\IDEA\ideaproject\mall)
+2022-02-24 20:27:33.434 [main] INFO  com.sjq.edu.EduTeacherApplication - The following profiles are active: dev
+2022-02-24 20:27:34.720 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:27:34.723 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:27:34.762 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-02-24 20:27:35.240 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2022-02-24 20:27:35.248 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2022-02-24 20:27:35.249 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-02-24 20:27:35.249 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-02-24 20:27:35.341 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-02-24 20:27:35.342 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1841 ms
+2022-02-24 20:27:35.658 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisTemplate实例化成功！
+2022-02-24 20:27:35.757 [main] INFO  com.sjq.edu.config.redis.RedisConfig - RedisUtil注入成功！
+2022-02-24 20:27:35.875 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-02-24 20:27:36.003 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 20:27:36.977 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 20:27:37.025 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 20:27:37.113 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-24 20:27:37.506 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2022-02-24 20:27:37.521 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2022-02-24 20:27:37.523 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 20:27:37.550 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 20:27:37.604 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 20:27:37.748 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_1
+2022-02-24 20:27:37.750 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: handleUsingGET_2
+2022-02-24 20:27:37.773 [main] INFO  com.sjq.edu.EduTeacherApplication - Started EduTeacherApplication in 4.929 seconds (JVM running for 5.851)
+2022-02-24 20:27:38.198 [RMI TCP Connection(4)-192.168.72.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-24 20:27:38.198 [RMI TCP Connection(4)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 20:27:38.199 [RMI TCP Connection(4)-192.168.72.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-02-24 20:30:10.225 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-24 20:30:10.227 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2022-02-24 20:30:10.230 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
