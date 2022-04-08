@@ -1,5 +1,6 @@
 package com.sjq.commonutils.vo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -25,7 +26,7 @@ public class EduTeacherVo implements Serializable {
     /**
      * 讲师ID
      */
-    private Long id;
+    private String id;
 
     /**
      * 讲师姓名
@@ -81,6 +82,12 @@ public class EduTeacherVo implements Serializable {
      * 每页记录数
      */
     private Long pagesize;
+
+    @ApiModelProperty(value = "查询开始时间", example = "2019-01-01 10:10:10")
+    private String begin;//注意，这里使用的是String类型，前端传过来的数据无需进行类型转换
+
+    @ApiModelProperty(value = "查询结束时间", example = "2019-12-01 10:10:10")
+    private String end;
 
 
 }

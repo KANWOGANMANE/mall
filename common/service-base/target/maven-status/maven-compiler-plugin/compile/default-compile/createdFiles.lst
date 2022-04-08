@@ -1,4 +1,0 @@
-com\sjq\servicebase\config\SwaggerConfig.class
-com\sjq\servicebase\handler\TimeColHandler.class
-com\sjq\servicebase\exception\GlobalExceptionHandler.class
-com\sjq\servicebase\exception\MyException.class

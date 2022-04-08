@@ -20,7 +20,7 @@ public class MySqlGenerator {
     private static final String password = "root";
     private static final String url = "jdbc:mysql://192.168.72.138:3306/mall?useUnicode=true&useSSL=false&characterEncoding=utf8";
     //公共的父类包名
-    private static final String myPackage = "com.sjq.edu";
+    private static final String myPackage = "com.sjq.fdfs.store"; //com.sjq.edu
 
     /**
      * <p>
@@ -48,7 +48,7 @@ public class MySqlGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/src/main/java");
+        gc.setOutputDir(projectPath + "/mall-fastdfs/src/main/java"); ///service/service-edu/src/main/java
         gc.setAuthor("kemp");
         gc.setOpen(false);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解

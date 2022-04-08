@@ -2,15 +2,16 @@ package com.sjq.edu.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.sjq.edu.service.IEduTeacherService;
 import com.sjq.commonutils.result.Result;
 import com.sjq.commonutils.vo.EduTeacherVo;
 import com.sjq.edu.entity.EduTeacher;
-import com.sjq.edu.service.IEduTeacherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ import java.util.List;
  * @since 2022-01-14
  */
 @RestController
-@RequestMapping("/edu/teacher")
+@RequestMapping("/eduservice")
 @CrossOrigin
 public class EduTeacherController {
 
@@ -49,37 +50,38 @@ public class EduTeacherController {
     }
 
     @DeleteMapping("/delTeacher/{id}")
-    public Result delTeacher(@PathVariable("id") Long id){
-        if(id!=null){
-            if(iEduTeacherService.removeById(id)){
-                return Result.ok("删除成功!");
-            }
+    public Result delTeacher(@PathVariable("id") String id){
+        boolean b = iEduTeacherService.removeById(id);
+        if(b){
+            return Result.ok();
+        }else{
+            return  Result.fail();
         }
-        return Result.fail("删除失败!");
     }
 
     /**
      * Mybatis-plus分页插件总结：
-     * 1.Page实习Ipage接口
-     * 2.创建Page的时候会条用父类构造方法，先把基类创建出来，
+     * 1.Page实现Ipage接口
+     * 2.创建Page的时候会调用父类构造方法，先把基类创建出来，
      * 3.通过Service.page(Page,QueryWarper)传入Page对象和QueryWarper会返回一个Ipage
      * 4.通过参数Page对象可以拿到返回结果的数据
      * 5.
      * @param current
-     * @param size
+     * @param limit
      * @return
      */
     @GetMapping("/pageTeachers/{current}/{limit}")
     public Result pageTeachers(@PathVariable("current")long current,
-                               @PathVariable("limit")long size){
-        return Result.ok(iEduTeacherService.page(new Page<EduTeacher>(current,size), null));
+                               @PathVariable("limit")long limit){
+        return Result.ok(iEduTeacherService.page(new Page<EduTeacher>(current,limit), null));
     }
 
-    @GetMapping("/pageTeacherCondition/{current}/{size}")
+    @PostMapping("/pageTeacherCondition/{current}/{limit}")
     public Result pageTeacherCondition(@PathVariable("current")long current,
-                                       @PathVariable("size")long size,
-                                       EduTeacherVo eduTeacherVo){
-        IPage<EduTeacher> page = new Page<>(current,size);
+                                       @PathVariable("limit")long limit,
+                                       @RequestBody(required = false) EduTeacherVo eduTeacherVo){
+
+        IPage<EduTeacher> page = new Page<>(current,limit);
         IPage iPage = iEduTeacherService.pageTeacherCondition(page, eduTeacherVo);
 
         return Result.ok(iPage);
@@ -87,13 +89,15 @@ public class EduTeacherController {
 
     @GetMapping("/findTeacher/{id}")
     public Result findTeacherById(@PathVariable("id") String id){
+        EduTeacher res =  new EduTeacher();
         if(id!=null){
-            EduTeacher id1 = iEduTeacherService.getById(id);
-            if(id1!=null) {
-                return Result.ok(id1);
-            }
+             res = iEduTeacherService.getById(id);
+             if(res != null){
+                 return Result.ok(res);
+             }
+             return Result.fail("查询失败");
         }
-        return Result.fail("查询失败！");
+        return Result.fail("查询失败");
     }
 
     @PostMapping("/updateTeacher")
@@ -101,6 +105,10 @@ public class EduTeacherController {
         if(vo!=null){
             EduTeacher tacher = new EduTeacher();
             BeanUtils.copyProperties(vo,tacher);
+            tacher.setGmtModified(LocalDateTime.now());
+            if(tacher.getAvatar() == null || tacher.getAvatar().length()==0){
+                tacher.setAvatar("http://192.168.72.138:8888/group1/M00/00/00/wKhIimJHz2OAc-mmAAAqXMYAv_428.webp");
+            }
             boolean b = iEduTeacherService.updateById(tacher);
             if(b){
                 return Result.ok("修改成功！");

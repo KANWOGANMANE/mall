@@ -24,4 +24,10 @@ public interface IEduTeacherService extends IService<EduTeacher> {
 
     public boolean insertTeacher(EduTeacherVo eduTeacherVo);
 
+    public EduTeacher getByids(String id);
+
+
+
+
+
 }
