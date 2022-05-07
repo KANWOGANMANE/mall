@@ -1,6 +1,7 @@
 package com.sjq.edu.mapper;
 
 import com.sjq.commonutils.vo.CoursePublishVo;
+import com.sjq.commonutils.vo.CourseWebVo;
 import com.sjq.edu.entity.EduCourse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -14,5 +15,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface EduCourseMapper extends BaseMapper<EduCourse> {
 
-    public CoursePublishVo getPublishCourseInfo(String courseId);
+    CoursePublishVo getPublishCourseInfo(String courseId);
+
+    CourseWebVo getBaseCourseInfo(String id);
 }

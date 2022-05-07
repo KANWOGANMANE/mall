@@ -3,17 +3,23 @@ package com.sjq.edu.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.sjq.edu.entity.EduCourse;
 import com.sjq.edu.mapper.EduTeacherMapper;
 import com.sjq.commonutils.vo.EduTeacherVo;
 import com.sjq.edu.entity.EduTeacher;
 import com.sjq.edu.service.IEduTeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -62,6 +68,7 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
     }
 
     @Override
+    @CacheEvict(value = "hotteacher",allEntries = true)
     public boolean insertTeacher(EduTeacherVo eduTeacherVo) {
         EduTeacher eduTeacher = new EduTeacher();
         BeanUtils.copyProperties(eduTeacherVo,eduTeacher);
@@ -82,5 +89,39 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
         Long ids = Long.parseLong(id);
         EduTeacher res = eduTeacherMapper.getoneByids(ids);
         return res;
+    }
+
+    @Override
+    @Cacheable(value = "hotteacher",key = "'selectHotTeacherList'")
+    public List<EduTeacher> getHotTeacher() {
+        QueryWrapper<EduTeacher> qw = new QueryWrapper<>();
+        qw.orderByDesc("id");
+        qw.last("limit 4");
+        List<EduTeacher> list = this.list(qw);
+        return list;
+    }
+
+    @Override
+    public Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher) {
+        QueryWrapper<EduTeacher> qw = new QueryWrapper();
+        qw.orderByDesc("id");
+        baseMapper.selectPage(pageTeacher, qw);
+        List<EduTeacher> records = pageTeacher.getRecords();
+        long current = pageTeacher.getCurrent();
+        long pages = pageTeacher.getPages();
+        long size = pageTeacher.getSize();
+        long total = pageTeacher.getTotal();
+        boolean hasNext = pageTeacher.hasNext();//下一页
+        boolean hasPrevious = pageTeacher.hasPrevious();//上一页
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("items", records);
+        map.put("current", current);
+        map.put("pages", pages);
+        map.put("size", size);
+        map.put("total", total);
+        map.put("hasNext", hasNext);
+        map.put("hasPrevious", hasPrevious);
+        return map;
     }
 }

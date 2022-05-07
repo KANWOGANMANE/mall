@@ -1,7 +1,10 @@
 package com.sjq.edu.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.sjq.edu.entity.EduCourse;
+import com.sjq.edu.service.IEduCourseService;
 import com.sjq.edu.service.IEduTeacherService;
 import com.sjq.commonutils.result.Result;
 import com.sjq.commonutils.vo.EduTeacherVo;
@@ -10,9 +13,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -24,13 +31,16 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice")
-@CrossOrigin
+//@CrossOrigin
 public class EduTeacherController {
 
     private static final Logger logger = LoggerFactory.getLogger(EduTeacherController.class);
 
     @Autowired
     private IEduTeacherService iEduTeacherService;
+
+    @Autowired
+    private IEduCourseService iEduCourseService;
 
     @GetMapping("/findAllTeachers")
     public Result selAllTeacher(){
@@ -50,6 +60,7 @@ public class EduTeacherController {
     }
 
     @DeleteMapping("/delTeacher/{id}")
+    @CacheEvict(value = "hotteacher",allEntries = true)
     public Result delTeacher(@PathVariable("id") String id){
         boolean b = iEduTeacherService.removeById(id);
         if(b){
@@ -101,6 +112,7 @@ public class EduTeacherController {
     }
 
     @PostMapping("/updateTeacher")
+    @CacheEvict(value = "hotteacher",allEntries = true)
     public Result UpdateTeacher(@RequestBody EduTeacherVo vo){
         if(vo!=null){
             EduTeacher tacher = new EduTeacher();
@@ -116,6 +128,42 @@ public class EduTeacherController {
         }
         return Result.fail("修改失败!");
     }
+
+    //查询热门讲师前4个
+    @GetMapping("hotteacher")
+    public Result hotteacher(){
+        List<EduTeacher> res =  iEduTeacherService.getHotTeacher();
+        if(res == null) return Result.fail();
+        return Result.ok(res);
+    }
+
+    @PostMapping("getTeacherFrontList/{page}/{limit}")
+    public Result getTeacherFrontList(@PathVariable Long page,@PathVariable Long limit){
+        Page<EduTeacher> pageTeacher = new Page<>(page,limit);
+        Map<String,Object> res = iEduTeacherService.getTeacherFrontList(pageTeacher);
+        if(res == null) return Result.fail();
+        return Result.ok(res);
+    }
+
+    @GetMapping("getTeacherFrontInfo/{id}")
+    public Result getTeacherFrontInfo(@PathVariable String id){
+        //查讲师信息
+        EduTeacher teacher = iEduTeacherService.getById(id);
+        //查讲师课程
+        QueryWrapper<EduCourse> qw = new QueryWrapper<>();
+        qw.eq("teacher_id",id);
+        List<EduCourse> list = iEduCourseService.list(qw);
+        Map<String,Object> map = new HashMap<>();
+        map.put("teacher",teacher);
+        map.put("courseList",list);
+        return Result.ok(map);
+    }
+
+
+
+
+
+
 
 
 

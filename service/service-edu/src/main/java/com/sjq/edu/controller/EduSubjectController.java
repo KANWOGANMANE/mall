@@ -23,7 +23,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice/subject")
-@CrossOrigin
+//@CrossOrigin
 public class EduSubjectController {
 
     @Autowired
@@ -44,4 +44,7 @@ public class EduSubjectController {
         List<OneSubject> res = edusubjectService.getAllOneTwoSubject();
         return Result.ok(res);
     }
+
+
+
 }

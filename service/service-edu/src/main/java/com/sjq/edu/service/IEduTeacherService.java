@@ -1,11 +1,13 @@
 package com.sjq.edu.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sjq.commonutils.vo.EduTeacherVo;
 import com.sjq.edu.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -26,8 +28,7 @@ public interface IEduTeacherService extends IService<EduTeacher> {
 
     public EduTeacher getByids(String id);
 
+    List<EduTeacher> getHotTeacher();
 
-
-
-
+    Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher);
 }

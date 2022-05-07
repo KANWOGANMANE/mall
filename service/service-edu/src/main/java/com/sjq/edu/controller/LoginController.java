@@ -13,7 +13,7 @@ import java.util.HashMap;
  */
 @RestController
 @RequestMapping("/eduservice/user")
-@CrossOrigin
+//@CrossOrigin
 public class LoginController {
 
     //

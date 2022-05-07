@@ -3,6 +3,9 @@ package com.sjq.edu.config.redis;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Caching;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -16,9 +19,10 @@ import java.time.Duration;
 
 
 @Configuration
+@EnableCaching
 @PropertySource("classpath:redis.properties")
 @Slf4j //日志处理
-public class RedisConfig {
+public class RedisConfig extends CachingConfigurerSupport {
 
     @Value("${redis.hostName}")
     private String hostName;

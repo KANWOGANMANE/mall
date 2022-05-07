@@ -7,16 +7,6 @@
         <option value="$PROJECT_DIR$/service/service-edu/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/cloud-consumer-payment/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-provider-payment/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-provider-zookeeper/pom.xml" />
-        <option value="$PROJECT_DIR$/mall-common/pom.xml" />
-        <option value="$PROJECT_DIR$/mall-search/pom.xml" />
-        <option value="$PROJECT_DIR$/mall-shiro/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectResources">
     <resource url="http://mybatis.org/dtd/mybatis-3-mapper.dtd" location="$PROJECT_DIR$" />

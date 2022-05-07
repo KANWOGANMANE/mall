@@ -11,4 +11,6 @@ import lombok.Data;
 public class TwoChapter {
     private String id;
     private  String title;
+    private String videoSourceId;//视频id
+    private Boolean isFree;
 }
