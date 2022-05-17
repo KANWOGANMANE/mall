@@ -1,8 +1,11 @@
 package com.sjq.edu.mapper;
 
+import com.sjq.edu.entity.EduCourse;
 import com.sjq.edu.entity.EduTeacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -18,4 +21,5 @@ public interface EduTeacherMapper extends BaseMapper<EduTeacher> {
     public EduTeacher getoneByids(Long id);
 
 
+    List<EduCourse> selectteachercourse(String condition);
 }

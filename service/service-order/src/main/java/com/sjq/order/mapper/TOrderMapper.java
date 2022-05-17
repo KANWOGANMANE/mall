@@ -1,7 +1,10 @@
 package com.sjq.order.mapper;
 
+import com.sjq.order.entity.EduCourse;
 import com.sjq.order.entity.TOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TOrderMapper extends BaseMapper<TOrder> {
 
+    List<EduCourse> selecthasbuylist(String memberid);
 }

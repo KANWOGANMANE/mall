@@ -13,11 +13,8 @@ import com.sjq.edu.entity.EduCourse;
 import com.sjq.edu.entity.EduCourseDescription;
 import com.sjq.edu.entity.EduTeacher;
 import com.sjq.edu.mapper.EduCourseMapper;
-import com.sjq.edu.service.IEduChapterService;
-import com.sjq.edu.service.IEduCourseDescriptionService;
-import com.sjq.edu.service.IEduCourseService;
+import com.sjq.edu.service.*;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sjq.edu.service.IEduVideoService;
 import com.sjq.servicebase.exception.MyException;
 import org.apache.poi.util.StringUtil;
 import org.springframework.beans.BeanUtils;
@@ -27,6 +24,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +48,9 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
 
     @Autowired
     private IEduChapterService eduChapterService;
+
+    @Autowired
+    private IEduTeacherService teacherService;
 
     @Override
     public String saveCourseInfo(CourseVo courseVo) {
@@ -140,19 +141,33 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //4删除课程
         boolean isDeleteCourse = baseMapper.deleteById(cid)>0?true:false;
 
-//        return isDeleteVideo && isDeleteChapter && isDeleteDescription && isDeleteCourse;
         return true;
     }
 
     @Override
-    @Cacheable(value = "hotcourse"  ,key="'selectHotCourseList'")
+//    @Cacheable(value = "hotcourse"  ,key="'selectHotCourseList'")
     public List<EduCourse> getHotCourse() {
+        QueryWrapper<EduCourse> reqw = new QueryWrapper<>();
+        reqw.eq("status","Normal");
+        reqw.eq("recommend",1);
+        reqw.orderByDesc("id");
+        reqw.last("limit 4");
+        List<EduCourse> list1 = this.list(reqw);
+        int next = 4 - list1.size();
         QueryWrapper<EduCourse> qw = new QueryWrapper<>();
         qw.eq("status","Normal");
-        qw.orderByDesc("id");
-        qw.last("limit 8");
+        qw.eq("recommend",0);
+        qw.orderByDesc("view_count");
+        qw.orderByDesc("comment_count");
+        if(next > 0){
+            int num = 4+next;
+            qw.last("limit "+ num);
+        }else{
+            qw.last("limit 4");
+        }
         List<EduCourse> list = this.list(qw);
-        return list;
+        list1.addAll(list);
+        return list1;
     }
 
     @Override
@@ -218,5 +233,29 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
     @Override
     public Map<String, Object> getCourseCollection(Page<EduCourse> pagecourse, CourseFrontVo courseFrontVo) {
         return null;
+    }
+
+    @Override
+    public List<EduCourse> searchcondition(String condition) {
+        List<String> courseid = new ArrayList<String>();
+        QueryWrapper<EduCourse> educourseqw = new QueryWrapper();
+        List<EduCourse> teachercourse = teacherService.getCourseListByTeacher(condition);
+        if(teachercourse != null && teachercourse.size()>0){
+            for(EduCourse a:teachercourse){
+                courseid.add(a.getId());
+            }
+        }
+        educourseqw.like("title",condition);
+        List<EduCourse> eduCourses = baseMapper.selectList(educourseqw);
+        if(eduCourses != null && eduCourses.size()>0){
+            for(EduCourse b:eduCourses){
+                String id = b.getId();
+                if(!courseid.contains(id)){
+                    courseid.add(id);
+                }
+            }
+        }
+        List<EduCourse> res = baseMapper.selectBatchIds(courseid);
+        return res;
     }
 }

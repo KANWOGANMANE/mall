@@ -178,9 +178,26 @@ public class EduCourseController {
         return courseWebVo;
     }
 
-    @GetMapping("search")
-    public Result search(){
+    @GetMapping("recommend/{id}")
+    public Result recommend(@PathVariable String id){
+        EduCourse one = eduCourseService.getById(id);
+        int recommend = one.getRecommend();
+        if(recommend == 0){
+            one.setRecommend(1);
+        }else{
+            one.setRecommend(0);
+        }
+        eduCourseService.updateById(one);
         return Result.ok();
+    }
+
+    @GetMapping("search/{condition}")
+    public Result search(@PathVariable String condition){
+        List<EduCourse> res = eduCourseService.searchcondition(condition);
+        if(res != null && res.size() > 0){
+            return Result.ok(res);
+        }
+        return Result.fail();
     }
 
 

@@ -11,5 +11,13 @@
 
     <artifactId>service-order</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.16.2.ALL</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

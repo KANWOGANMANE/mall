@@ -5,6 +5,7 @@ import com.sjq.commonutils.vo.CourseWebVo;
 import com.sjq.commonutils.vo.UcenterMemberVo;
 import com.sjq.order.client.eduClient;
 import com.sjq.order.client.userClient;
+import com.sjq.order.entity.EduCourse;
 import com.sjq.order.entity.TOrder;
 import com.sjq.order.mapper.TOrderMapper;
 import com.sjq.order.service.ITOrderService;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -71,5 +73,15 @@ public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> impleme
         }
         baseMapper.insert(order);
         return order.getOrderNo();
+    }
+
+    @Override
+    public List<EduCourse> gethasBuyCourse(String memberid) {
+        QueryWrapper<TOrder> qw = new QueryWrapper<>();
+        qw.eq("member_id",memberid);
+        qw.eq("is_deleted",0);
+        qw.eq("status",1);
+        List<EduCourse> res = baseMapper.selecthasbuylist(memberid);
+        return res;
     }
 }

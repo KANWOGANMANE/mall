@@ -3,6 +3,7 @@ package com.sjq.edu.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sjq.commonutils.vo.EduTeacherVo;
+import com.sjq.edu.entity.EduCourse;
 import com.sjq.edu.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -31,4 +32,6 @@ public interface IEduTeacherService extends IService<EduTeacher> {
     List<EduTeacher> getHotTeacher();
 
     Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher);
+
+    List<EduCourse> getCourseListByTeacher(String condition);
 }

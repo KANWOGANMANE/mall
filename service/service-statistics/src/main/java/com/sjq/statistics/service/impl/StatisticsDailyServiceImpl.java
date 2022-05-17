@@ -50,9 +50,9 @@ public class StatisticsDailyServiceImpl extends ServiceImpl<StatisticsDailyMappe
         sc.setGmtCreate(LocalDateTime.now());
         sc.setGmtModified(LocalDateTime.now());
 
-        sc.setVideoViewNum(RandomUtils.nextInt(100,200));
-        sc.setLoginNum(RandomUtils.nextInt(100,200));
-        sc.setCourseNum(RandomUtils.nextInt(100,200));
+        sc.setVideoViewNum(RandomUtils.nextInt(20,30));
+        sc.setLoginNum(RandomUtils.nextInt(1,8));
+        sc.setCourseNum(RandomUtils.nextInt(1,8));
         baseMapper.insert(sc);
         return c;
     }

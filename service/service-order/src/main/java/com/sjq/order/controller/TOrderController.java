@@ -2,14 +2,17 @@ package com.sjq.order.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.sjq.commonutils.result.Result;
 import com.sjq.commonutils.utils.JwtUtils;
+import com.sjq.order.entity.EduCourse;
 import com.sjq.order.entity.TOrder;
 import com.sjq.order.service.ITOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * <p>
@@ -51,6 +54,17 @@ public class TOrderController {
         TOrder one = orderService.getOne(qw);
         if(one == null) return Result.fail();
         return Result.ok(one);
+    }
+
+    @GetMapping("getHasBuyCourseList")
+    public Result getHasBuyCourseList(HttpServletRequest request){
+        String memberid = JwtUtils.getMemberIdByJwtToken(request);
+        if(StringUtils.isNotBlank(memberid)){
+            List<EduCourse> res = orderService.gethasBuyCourse(memberid);
+            if(res != null)
+                return Result.ok(res);
+        }
+        return Result.fail();
     }
 
 

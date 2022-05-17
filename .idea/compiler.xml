@@ -15,7 +15,6 @@
         <module name="service-ucenter" />
         <module name="spring-security" />
         <module name="service-acls" />
-        <module name="service-msm" />
         <module name="mall-gateway" />
         <module name="service-edu" />
         <module name="service-base" />

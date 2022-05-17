@@ -45,4 +45,6 @@ public interface IEduCourseService extends IService<EduCourse> {
     void viewcountadd(String id);
 
     Map<String, Object> getCourseCollection(Page<EduCourse> pagecourse, CourseFrontVo courseFrontVo);
+
+    List<EduCourse> searchcondition(String condition);
 }

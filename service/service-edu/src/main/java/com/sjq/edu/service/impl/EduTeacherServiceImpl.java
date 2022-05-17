@@ -50,6 +50,7 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
         Integer level = eduTeacherVo.getLevel();
         String begin = eduTeacherVo.getBegin();
         String end = eduTeacherVo.getEnd();
+        Integer sort = eduTeacherVo.getSort();
         if(StringUtils.isNotBlank(name)){
             qw.like("name",name);
         }
@@ -62,7 +63,8 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
         if(StringUtils.isNotBlank(end)){
             qw.le("gmt_create",end);
         }
-        qw.orderByDesc("gmt_create");
+        qw.orderByDesc("sort");
+//        qw.orderByDesc("gmt_create");
 
         return this.page(page,qw);
     }
@@ -123,5 +125,11 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
         map.put("hasNext", hasNext);
         map.put("hasPrevious", hasPrevious);
         return map;
+    }
+
+    @Override
+    public List<EduCourse> getCourseListByTeacher(String condition) {
+        List<EduCourse> res = baseMapper.selectteachercourse("%" + condition + "%");
+        return res;
     }
 }

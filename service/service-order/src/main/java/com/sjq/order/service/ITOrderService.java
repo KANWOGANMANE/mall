@@ -1,7 +1,10 @@
 package com.sjq.order.service;
 
+import com.sjq.order.entity.EduCourse;
 import com.sjq.order.entity.TOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,4 +17,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITOrderService extends IService<TOrder> {
 
     String createOrder(String courseId, String token);
+
+    List<EduCourse> gethasBuyCourse(String memberid);
 }

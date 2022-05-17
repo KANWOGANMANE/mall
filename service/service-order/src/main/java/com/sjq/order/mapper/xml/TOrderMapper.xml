@@ -2,4 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sjq.order.mapper.TOrderMapper">
 
+    <select id="selecthasbuylist" resultType="com.sjq.order.entity.EduCourse">
+        select *
+        FROM edu_course ec
+        LEFT JOIN t_order ord
+        ON ec.id=ord.course_id
+        WHERE ord.member_id = #{member_id} And ord.status=1 AND ord.is_deleted=0
+    </select>
 </mapper>

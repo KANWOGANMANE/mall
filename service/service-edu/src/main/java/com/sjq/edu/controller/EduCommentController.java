@@ -76,6 +76,4 @@ public class EduCommentController {
         }
         return Result.fail();
     }
-
-
 }

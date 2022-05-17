@@ -6,4 +6,11 @@
     <select id="getoneByids" parameterType="Long" resultType="com.sjq.edu.entity.EduTeacher">
              SELECT * FROM `edu_teacher` WHERE id  = #{id}
     </select>
+    <select id="selectteachercourse" resultType="com.sjq.edu.entity.EduCourse">
+                        SELECT *
+                        FROM edu_course
+                        WHERE (teacher_id = ANY(SELECT id
+											 FROM edu_teacher
+											 WHERE `name` LIKE #{condition}))
+    </select>
 </mapper>
