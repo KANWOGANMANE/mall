@@ -1,33 +1,40 @@
-### Example user template template
-### Example user template
-
-# IntelliJ project files
-.idea
-*.iml
-out
-gen
-
-### Java template
 # Compiled class file
 *.class
 
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Intellij
+*.ipr
+*.iml
+*.iws
+.idea/
+
+# Maven
+target/
+
+# Gradle
+build
+.gradle
+
 # Log file
 *.log
+log/
 
-# BlueJ files
-*.ctxt
+# out
+**/out/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-.idea/
-# Package Files #
-*.iml
+# Mac
+.DS_Store
+
+# others
 *.jar
 *.war
-*.nar
-*.ear
 *.zip
+*.tar
 *.tar.gz
-*.rar
-hs_err_pid*
-yt-access-server/target/
+*.pid
+*.orig
+temp/
