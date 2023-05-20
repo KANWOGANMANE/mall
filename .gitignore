@@ -21,6 +21,7 @@ gen
 .mtj.tmp/
 .idea/
 # Package Files #
+*.iml
 *.jar
 *.war
 *.nar
